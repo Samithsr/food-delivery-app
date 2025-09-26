@@ -1,10 +1,23 @@
-import React from 'react'
-import "./StoreContext.css"
+import { createContext } from "react";
+import { food_list } from "../assets/assets";
 
-const StoreContext = () => {
+export const StoreContext = createContext(null);
+
+
+
+const StoreContextProvider = (props) => {
+    const contextValue = {
+        food_list
+    } 
     return(
-        <div></div>
+        <StoreContext.Provider value={contextValue}>
+            {props.children}
+        </StoreContext.Provider>
     )
 }
 
-export default StoreContext
+export default StoreContextProvider
+
+
+
+

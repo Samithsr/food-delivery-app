@@ -1,0 +1,9 @@
+.navbar-heade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vw;
+    cursor: pointer;
+    min-height: 40vw;
+    min-width: 40vh;
+}

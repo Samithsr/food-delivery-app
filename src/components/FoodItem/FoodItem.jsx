@@ -5,20 +5,34 @@ import { assets } from '../../assets/assets'
 const FoodItem = ({id, name, description, image, price}) => {
 
 
-    const [itemcount, setItemCount] = useState(0);
+
+  const [data, setData] = useState(0);
+    // const [itemcount, setItemCount] = useState(0);
 
   return (
     <div className='food-item'>
-       <div className="foof-item-img-container">
+       <div className="food-item-img-container">
         <img className='food-item-image' src={image} alt="" />
 
+      {!data 
+      ? <img className='add' onClick={()=>setData(prev=>prev+1)} src={assets.add_icon_white} alt="" srcset="" />
+      : <div className="food-item-counter">
+
+        <img onClick={()=>setData(prev=>prev-1)} src={assets.remove_icon_red} alt="" srcset="" />
+        <p>{data}</p>
+        <img onClick={()=>setData(prev=>prev+1)} src={assets.add_icon_green} alt="" srcset="" />
+      </div>
+      }
+
+{/* 
         {!itemcount
-         > <img className='add' onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_white} alt="" srcset="" />
+         ? <img className='add' onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_white} alt="" srcset="" />
          : <div className='food-item-counter' >
 
+
          </div>
-        
-        }
+
+        } */}
 
        </div>
        <div className="food-item-info">

@@ -5,6 +5,9 @@ import FoodItem from "../FoodItem/FoodItem";
 
 const FoodDisplay = ({category}) => {
     
+
+    // here using api import form storeContext.jsx to here    api like food_list
+
     const {food_list} = useContext(StoreContext)
 
     return(
